@@ -1,0 +1,3 @@
+NAME: Oksana
+AGE: 27 
+CITY: Lviv
