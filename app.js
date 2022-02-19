@@ -25,6 +25,7 @@ app.use(express.urlencoded({extended: true}));
 const users = [];
 
 
+
 app.get('/login', (req, res) => {//перехід на сторінку з формою
     res.render('login');
 });
