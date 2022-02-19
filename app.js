@@ -39,18 +39,18 @@ app.post('/login', ({body}, res) => {//якщо відпрацював мето�
 });
 
 app.get('/users', ({query}, res) => {//передаєм весь масив на сторінку для відмальрвки
-    if (Object.keys(query).length) {
-        let user = [...users];
+    if (Object.keys(query).length) {//перевіряємо чи є наші квері
+        let user = [...users];//копія основного масиву юзерів для фільтрації
         if (query.city) {
-            user = user.filter(user => user.city === query.city);
+            user = user.filter(user => user.city === query.city);//фільтруєм по місту
         }
         if (query.age) {
-            user = user.filter(user => user.age === query.age);
+            user = user.filter(user => user.age === query.age);//фільтруєм по віку
         }
-        res.render('users', {users: user});
+        res.render('users', {users: user});//відмальовуємо відфільтроване
         return
     }
-    res.render('users', {users});
+    res.render('users', {users});//відмальовуємо всіх юзерів
 });
 
 app.get('/users/:id', ({params}, res) => {//сторінка окремого юзера, дестректуризуєм з парамс айдішку
