@@ -1,9 +1,10 @@
-const {Router} = require('express')
-const userRouter = require('./userRouter')
-const loginRouter = require("./loginRouter");
-const signInRoutes = require("./signInRoutes");
-const errorRoutes = require("./errorRoutes");
-const deleteRoutes = require("./deleteRoutes");
+const {Router} = require('express');
+
+const userRouter = require('./userRouter');
+const loginRouter = require('./loginRouter');
+const signInRoutes = require('./signInRoutes');
+const errorRoutes = require('./errorRoutes');
+const deleteRoutes = require('./deleteRoutes');
 
 const routes = Router();
 

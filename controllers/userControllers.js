@@ -1,4 +1,4 @@
-const users = require("../db/users");
+const users = require('../db/users');
 
 class UserControllers {
     renderUsers({query}, res) {
@@ -23,7 +23,8 @@ class UserControllers {
         const user = users.find(user => user.id === +params.id);// перевіряєм чи в масиві є такий юзер і кладем в змінну(добавляєм "+" щоб перевести в цифру, бо дістаєм стрінгу )
 
         if (!user) {//якщо юзера з такою айдішкою не має то:
-            res.redirect('/error')//переведи на ерору
+            const err = 'user with this id is not found'
+            res.render('errorPage', {err});//переведи на ерору
             return//закінчи подальше виконання коду
         }
 

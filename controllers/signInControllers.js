@@ -1,10 +1,10 @@
 class SignInControllers {
     renderSignIn(req, res) {
         res.render('signIn');
-    }
+    };
 
     renderUserInfo({user}, res) {
-        res.render('userInfo', {user: user[0]});//переходим на його сторінку
+        res.render('userInfo', {user});//переходим на його сторінку
     };
 }
 

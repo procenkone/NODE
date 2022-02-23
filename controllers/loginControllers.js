@@ -1,4 +1,4 @@
-const users = require("../db/users");
+const users = require('../db/users');
 
 class LoginControllers {
     renderLogin(req,res){

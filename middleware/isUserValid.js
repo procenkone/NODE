@@ -1,4 +1,4 @@
-const users = require("../db/users");
+const users = require('../db/users');
 
 function isUserValid({body}, res, next) {// валідуєм форму
     try {
@@ -20,9 +20,11 @@ function isUserValid({body}, res, next) {// валідуєм форму
 
         next();//якщо перевірки не справдились то дозволяєм продовжити код який в контролері, після нашого мідлвару
 
-    } catch ({message}) {
-        console.log(message);//це помилка з класу помилки який створився при перевірці
-        res.status(400).send(message);//в консоль статус а на сторінку повідомлення про помилку
+    } catch (e) {
+        const err = e.message
+        // console.log(err);//це помилка з класу помилки який створився при перевірці
+        // res.status(400).send(message);//в консоль статус а на сторінку повідомлення про помилку
+        res.render('errorPage', {err})
     }
 }
 

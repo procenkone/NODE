@@ -1,4 +1,4 @@
-const users = require("../db/users");
+const users = require('../db/users');
 
 class DeleteControllers {
     deleteRedirect({params}, res) {
